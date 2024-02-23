@@ -1,0 +1,12 @@
+#results-lists{
+    margin-top:5px;
+    width:89%;
+    background-color:white;
+    display:flex;
+    flex-direction:column;
+    border: 1px solid #e5e5e5;
+    max-top:1rem;
+    max-height:300px;
+    overflow-y:scroll;
+    
+}
