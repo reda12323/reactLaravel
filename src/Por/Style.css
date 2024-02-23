@@ -37,6 +37,7 @@ input:focus{
 }
 #ImgP{
     width:40px;
+    margin-top:2px;
 }
 
 .nav-cart-count{
@@ -44,14 +45,25 @@ input:focus{
     height: 22px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: -45px;
-    margin-left: 37px;
+    margin-top: -27px;
+    
     border-radius: 11px;
     font-size: 14px;
     background: red;
     color: white;
+    
 }
-#TextP{
-    text-align:center;
+
+#Panier{
+
+    padding-left:150px;
+    padding-right:35px;
+    font-size:20px;
+    font-weight:bold;
+}
+#vide{
+
+    padding-left:158px;
+    padding-right:35px;
+    color: grey;
 }
