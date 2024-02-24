@@ -1,0 +1,135 @@
+/* CategoryMenu.css */
+
+.category-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-toggle {
+    cursor: pointer;
+    padding: 10px;
+    margin: -27px 0px 0px 6px;
+    
+    border-radius: 100%;
+    padding: 11px 15px;
+
+  }
+  .allcategories{
+    display:flex;
+    background-color:rgb(255, 0, 0, 0.6);
+    padding:25px 67px 0px 0px;
+    margin-left:190px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .categories{
+    margin-top:-18px;
+    font-weight:bold;
+    font-size:22px;
+    color: white;
+  }
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+  
+  .open.bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .open.bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .open.bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  .category-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 190px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  
+  .category-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .category-dropdown li {
+    position: relative;
+    padding: 14px 84px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .category-dropdown li:last-child {
+    border-bottom: none;
+  }
+  
+  .category-dropdown a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+  }
+  #firstLi{
+    font-size:16px;
+    font-weight:600;
+ }
+  #firstLi:hover{
+     color:red;
+    background-color:#efefef;
+    
+  }
+  .category-dropdown li:hover {
+    
+    background-color:#efefef;
+  }
+  
+  .subcategory-list  li:hover{
+   background-color:white;
+    
+  }
+  #Two:hover{
+    color:red;
+  }
+  #Two{
+    margin-right:80px;
+    
+  }
+  .subcategory-list  li {
+    text-align:center;
+    font-size: smaller;
+    width: 50px;
+    background-color:white;
+  }
+  .subcategory-list {
+    position: absolute;
+    top: 0;
+    left: 272px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border:1px solid grey;
+    padding-right:100px;
+  }
+  #Mustbe{
+    width:50px;
+    
+  }
+  .category-dropdown li:hover .subcategory-list {
+    display: block;
+    
+    background-color:white;
+  }
+
+  .add-li{
+    padding: 10px 0;
+    border-radius: 10px;
+  }

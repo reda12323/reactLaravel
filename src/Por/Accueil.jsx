@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SearchResultsListe from './SearchResultsListe';
+import Menu from './Menu';
 import Imgpanier from '../Img/panier.png';
 import './Style.css';
 export default function Accueil(props) {
@@ -73,8 +74,12 @@ export default function Accueil(props) {
                         
                     </form>
                     <SearchResultsListe className="my-2" id="SearchRL" results={props.results} />
-                    
                 </div>
+                
+            </nav>
+            <nav className="flex items-start">
+                <Menu />
+                
             </nav>
         </div>
     );
