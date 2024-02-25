@@ -17,7 +17,7 @@
   }
   .allcategories{
     display:flex;
-    background-color:rgb(255, 0, 0, 0.6);
+    background-color:rgb(185 28 28);
     padding:25px 67px 0px 0px;
     margin-left:190px;
     border-top-left-radius: 5px;
@@ -101,7 +101,7 @@
     color:red;
   }
   #Two{
-    margin-right:80px;
+    
     
   }
   .subcategory-list  li {

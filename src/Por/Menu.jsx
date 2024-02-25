@@ -1,10 +1,10 @@
-import React from 'react'
-import './Menu.css'
+import React from 'react';
+import './Menu.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+
 export default function Menu() {
-    
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(true); // Initially set to true for entry
   const [hoveredCategory, setHoveredCategory] = useState(null);
 
   const toggleMenu = () => {
@@ -23,7 +23,7 @@ export default function Menu() {
   const categories = [
     {
       id: 1,
-      name: "SetupComplet",
+      name: "Setup Complet",
       route: "/category/1",
     },
     {
