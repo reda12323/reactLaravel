@@ -1,0 +1,16 @@
+.container{
+    margin-left:130px;
+    width:80%;
+    box-sizing: border-box;
+    margin-bottom:20px;
+}
+.img, video {
+    max-width: 75%;
+    height: 83px;
+    text-align:center;
+    padding-left:20px;
+}
+.react-multi-carousel-track {
+    padding-top: 23px;
+    padding-bottom: 10px;
+}

@@ -67,27 +67,32 @@ input:focus{
     padding-right:35px;
     color: grey;
 }
-.Acc{
+.Accp{
     display:flex;
     flex-items:center;
 }
-#Fbar{
+#Fbarp{
     margin-top:12px;
 }
-#P1{
+#P1p{
     padding-left:40px;
     font-weight:600;
     color:#555;
 }
-#P1:hover{
+#P1p:hover{
     color:rgb(220 38 38);
 }
-.P2{
+.P2p{
     color:rgb(220 38 38);
     font-weight:600;
-    padding-left:15px;
+    padding-left:40px;
 }
-#I2{
-    color:rgb(220 38 38);
+#I2p{
+    color:#555;
     margin-left:30px;
+}
+#P3p{
+    color:#555;
+    font-weight:600;
+    padding-left:15px;
 }

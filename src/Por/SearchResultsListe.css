@@ -1,6 +1,6 @@
 #results-lists{
-    margin-top:5px;
-    width:60.9%;
+    margin-top:50px;
+    width:495px;
     background-color:white;
     display:flex;
     flex-direction:column;
@@ -8,5 +8,7 @@
     max-top:1rem;
     max-height:300px;
     overflow-y:scroll;
-    
+    position: absolute; /* Position absolutely */
+    z-index: 1; 
+    top:165px;
 }

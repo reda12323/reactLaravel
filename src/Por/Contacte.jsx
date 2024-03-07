@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchResultsListe from './SearchResultsListe';
-import { Link } from "react-router-dom";
-import Menu from './Menu';
-import PromoBars from "./PromoBars";
 import Imgpanier from '../Img/panier.png';
-import ImagesSliders from './ImagesSliders';
-import Nav from './InfoNav';
-import './Style.css';
-import NouvelArs from "./NouvelArs";
-export default function Accueil(props) {
+import { Link } from "react-router-dom";
+import MidContacte from "./MidContacte";
+import { useState } from "react";
+import Info from "./InfoContact";
+import './Style3.css';
+export default function Contacte(props){
     const [search,setSearch] = useState("");
     
     const fetchData = (value) => {
@@ -23,8 +21,8 @@ export default function Accueil(props) {
         setSearch(value);
         fetchData(value);
     }
-    return (
-        <div className="min-h-screen ">
+    return(
+        <div className="min-h-screen">
             <nav className="bg-gray-200 shadow-lg ">
                 <div className="container mx-auto">
                     <div className="flex justify-between items-center py-2.5">
@@ -78,44 +76,31 @@ export default function Accueil(props) {
                             <div className="nav-cart-count">0</div>
                         
                     </form>
-                    <SearchResultsListe className="my-2" id="SearchRL" results={props.results} />
+                    <SearchResultsListe className="my-2" id="SearchRLp" results={props.results} />
                 </div>
                 
             </nav>
-            <nav className="flex items-start ">
-                <Menu />
-                <div id="Fbar" className="flex ">
-                    <div className="Acc">
-                        <div>
-                        <svg id="I2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-                        </svg>
+            <nav className="flex items-start ml-20">
+                <div id="Fbarp" className="flex ">
+                    <div className="Accp">
+                        <div >
+                            <svg id="I2p" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=" w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                            </svg>
                         </div>
-                        <div  className="P2"><Link to="/">Accuiel</Link></div>
+                        <div  id="P3p"><Link to="/">Accuiel</Link></div>
                     </div>
-                    <div id="P1"><Link to="">Boutique</Link></div>
-                    <div id="P1"><Link to="">Promotion</Link></div>
-                    <div id="P1"><Link to="/props">À Propos</Link></div>
-                    <div id="P1"><Link to="/contacte">Contacte</Link></div>
+                    <div id="P1c"><Link>Boutique</Link></div>
+                    <div id="P1c"><Link>Promotion</Link></div>
+                    <div id="P1c"><Link to="/props">À Propos</Link></div>
+                    <div id="P2c"><Link to="/contacte">Contacte</Link></div>
                 </div>
-            </nav><hr/>
+                
+            </nav><hr className="mt-6"/>
             <nav>
-                <div>
-                    <ImagesSliders/>
-                </div>
-            </nav>
-            <nav>
-                <div>
-                    <Nav/>
-                </div>
-            </nav>
-            <nav>
-                <PromoBars />
-            </nav>
-            <nav>
-                <NouvelArs/>
+                <MidContacte/>
+                <Info/>
             </nav>
         </div>
-        
-    );
+    )
 }

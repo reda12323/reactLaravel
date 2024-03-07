@@ -1,0 +1,23 @@
+.scroll-to-top-btn {
+    opacity: 0;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 16px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out, display 0s linear 0.3s;
+}
+
+.scroll-to-top-btn.visible {
+    opacity: 1;
+    display: block;
+    transition: opacity 0.3s ease-in-out, display 0s linear;
+    background-color: #ffc8c8;
+}
+
+.scroll-to-top-btn.hidden {
+    opacity: 0;
+    display: none;
+}

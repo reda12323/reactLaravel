@@ -1,0 +1,87 @@
+.infob{
+    background-color:#161616;
+    padding-bottom:500px;
+}
+#infoTitre{
+    color:white;
+    font-weight:bold;
+    margin-bottom:30px;
+    
+}
+#infoTitre1{
+    color:white;
+    font-weight:bold;
+    font-size:18.5px;
+}
+#infoImg{
+    vertical-align: middle;
+    display: inline-block;
+    width:180px;
+    height: 180px;;
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+#infoBar1{
+    display:flex;
+}
+#infoDesc1{
+    margin-top:45px;
+    color:grey;
+    font-size:14px;
+    width:370px;
+    
+}
+#infoAvan{
+    color:grey;
+    font-size:13.5px;
+    font-weight:500;
+    width:191px;
+}
+#infoAvan:hover{
+    color:red;
+    font-size:13.5px;
+    font-weight:500;
+    width:191px;
+}
+#infoCol1{
+    padding-left:50px;
+}
+.infoCol1{
+    padding-left:50px;
+}
+#infoAll{
+    padding-top:150px;
+    margin-right:60px;
+    margin-left:20px;
+    text-align:justify;
+}
+#infoDesc2{
+    margin-top:90px;
+    margin-left:35px;
+    color:white;
+    font-size: 13px;
+    line-height: 1.3;
+    font-weight:500;
+    width:910px;
+}
+#infoIcon5{
+    display:flex;
+    margin-top:10px;
+}
+.fa-facebook{
+    color:#2252d1;
+}
+.fa-instagram{
+    color:#ffffff;
+}
+.fa-whatsapp{
+    color:#08C70C;
+}
+.fa-tiktok{
+    color:#fff;
+}
+.fa-youtube{
+    color:red;
+}

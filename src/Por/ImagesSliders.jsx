@@ -9,17 +9,17 @@ const ImagesSliders = () => {
     ];
     
     const containerStyles = {
-      width: "1000px",
-      height: "400px",
+      width: "1065px",
+      height: "420px",
       margin: "0 auto",
       marginTop: "15px",
-      marginRight: "25px",
+      marginRight: "10px",
     };
   
     return (
       <div>
         <div style={containerStyles}>
-          <ImageSlider slides={slides} parentWidth={1000} />
+          <ImageSlider slides={slides} parentWidth={1065} />
         </div>
       </div>
     );

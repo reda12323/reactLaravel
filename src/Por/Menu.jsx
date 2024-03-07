@@ -99,7 +99,7 @@ export default function Menu() {
   ];
   
 return (
-    <div className="category-menu flex justify-between" onMouseLeave={handleCategoryLeave}>
+    <div className="category-menu flex justify-between " onMouseLeave={handleCategoryLeave}>
         <div className='allcategories'>
           <div className="menu-toggle" onClick={toggleMenu}>
             <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>

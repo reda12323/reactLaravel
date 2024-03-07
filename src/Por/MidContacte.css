@@ -1,0 +1,39 @@
+#ContAll{
+    display:flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-around;
+    margin-top:75px;
+    margin-bottom:70px;
+}
+#ContAll2{
+    display: block;
+    width:600px;
+}
+#ContDesc:before{
+    content: "\25AA"; /* Unicode character for a black small square */
+    margin-right: 5px; /* For spacing between the square and the text */
+}
+#ContP1{
+    font-size: 1.3rem;
+    color: #313131;
+    font-family: Open Sans, sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+    
+}
+#ContP2{ 
+    color: #313131;
+    font-weight: 600;
+    line-height: 1.3;
+    font-size: 0.9rem;
+    line-height:35px;
+}
+#ContDesc{
+    font-size: 11.5pt;
+    font-family: "Open Sans";
+    line-height: 24px;
+    font-weight: 400;
+    font-style: normal;
+    color: #555555;
+}

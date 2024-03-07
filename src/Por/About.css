@@ -1,0 +1,50 @@
+.aboutp{
+    
+        background-image: url('https://demo.lion-themes.net/clickbuy/wp-content/uploads/2016/11/bkg_contact2.png?id=2021');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 0px ;
+        margin-left: 0px ;
+        padding-top: 50px ;
+        padding-right: 0px ;
+        padding-bottom: 50px ;
+        padding-left: 0px ;
+      
+}
+.usp{
+    font-size: 30px;
+    color: #ffffff;
+    text-align: left;
+    font-family: "Kinetika Bold", sans-serif;;
+    font-weight: 700;
+    font-style: normal;
+    padding-left:7.5%;
+}
+.ush1 h1{
+    font-size: 30px;
+    text-align: left;
+    font-family: Open Sans, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #3d3c3c;
+}
+.ush1 p{
+    color:grey;
+    font-weight:smaller;
+    font-size:15px;
+    letter-spacing: 0.5px;
+    margin-top:15px;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13.5px;
+    line-height: 1.72857143;
+}
+.ush1{
+    margin-left:80px;
+    margin-right:80px;
+    margin-top:60px;
+}
+.ush1 #div{
+    margin-left:25px;
+    
+}

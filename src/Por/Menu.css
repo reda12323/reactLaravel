@@ -19,9 +19,10 @@
     display:flex;
     background-color:rgb(185 28 28);
     padding:25px 67px 0px 0px;
-    margin-left:190px;
+    margin-left:124px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    
   }
   .categories{
     margin-top:-18px;
@@ -52,7 +53,7 @@
   .category-dropdown {
     position: absolute;
     top: 100%;
-    left: 190px;
+    left: 124px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1;

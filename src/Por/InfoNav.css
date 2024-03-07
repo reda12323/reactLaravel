@@ -1,0 +1,54 @@
+/* InfoNav.css */
+
+/* Style the nav container */
+.nav-container {
+    display: flex;
+    justify-content: center; /* Center align items */
+    margin-top:100px;
+    
+  }
+  #P1{
+    font-weight:600;
+    color:black;
+    display:flex;
+  }
+  #P2{
+    font-weight:400;
+    color:grey;
+  }
+  #ic1{
+    margin-left:50px;
+    
+  }
+  #ic4{
+    
+    margin-left:40px;
+  }
+  #ic{
+    margin-left:40px;
+  }
+  /* Style the individual icon containers */
+  .nav-container > div {
+    margin-right: 10px; /* Add space between icons */
+    cursor: pointer; /* Change cursor on hover */
+    transition: transform 0.3s ease;
+    border-radius: 50%; /* Make the container circular */
+    background-color: white; /* Smooth transition */
+    padding:15px;
+    border: 1px solid black;
+  }
+  .nav-container > div:hover{
+    background-color : red;
+    color:white;
+  }
+  /* Increase icon size */
+  .nav-container > div > svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Scale up icon on hover */
+  .nav-container > div:hover {
+    transform: scale(1.2); /* Scale up to 120% on hover */
+  }
+  
