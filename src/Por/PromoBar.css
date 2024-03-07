@@ -1,14 +1,11 @@
-.react-multi-carousel-track{
-    padding-top:75px;
-    padding-bottom:10px;
-}
+
 
 .pt-20{
     padding-top:5rem;
     margin-right:65.5px;
 }
 .react-multiple-carousel__arrow--right{
-    margin-top:-397px;
+    margin-top:-379px;
     border-radius: 0 50% 50% 0;
     min-width: 20px; /* Adjust according to your preference */
     min-height: 20px;
@@ -22,7 +19,7 @@
 }
 
 .react-multiple-carousel__arrow--left{
-    margin-top:-397px;
+    margin-top:-379px;
     margin-left:26.7cm;
     border-radius: 50% 0 0  50% ;
     min-width: 20px; /* Adjust according to your preference */

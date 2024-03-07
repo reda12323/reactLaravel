@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Scroll from './Por/Scroll';
 import { SignUp } from './Por/SignUp';
 import Contacte from './Por/Contacte';
+import Product from './Por/Product';
   
 function App() {
   const [results,setResults] = useState([]);
@@ -17,6 +18,7 @@ function App() {
           <Route path='/props' element={<Propos setResults={setResults} results={results} />}/>
           <Route path='/account' element={<SignUp/>}/>
           <Route path='/contacte' element={<Contacte setResults={setResults} results={results} />}/>
+          <Route path="/product/:productID" element={<Product/>}/>
         </Routes>
         
        {/* Retirez ce BrowserRouter */}
