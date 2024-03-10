@@ -1,0 +1,229 @@
+body{
+    
+}
+#proGround{
+    display:flex;
+    background: #fff;
+    position:absolute;
+    top:380px;
+    left:150px;
+    right:150px;
+    padding: 0.9375rem;
+    box-shadow: 0 1px 5px rgba(0,0,0,.2);
+    border-radius: 5px;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-around;
+    
+}
+#proDisponibleX{
+    color: #155724;
+    background-color: #d4edda;
+    font-size:13px;
+    font-family:"Corporate S Bold SC";
+    border-radius:5px;
+    padding-right:35px;
+    padding-left:35px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+#proDisponibleY{
+    color:#ed4b4b;
+    
+    background-color: #ffd9d9;
+    font-size:13px;
+    font-family:"Corporate S Bold SC";
+    border-radius:5px;
+    padding-right:35px;
+    padding-left:35px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+#protitre{
+    font-family: Roboto Condensed,sans-serif;
+    font-weight: 700;
+    color: #3d3d3d;
+    line-height: 30px;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    margin: 0 0 15px;
+    font-size:22px;
+    padding: 5px 0;
+}
+#proReference{
+    font-family: Roboto,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #5d5d5d;
+    line-height: 1.25rem;
+    font-size:13.5px; 
+}
+#proEtat{
+    font-family: Roboto,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #5d5d5d;
+    line-height: 1.25rem;
+    font-size:13.5px; 
+    margin-bottom:10px;
+}
+
+#proCara{
+    font-family: Roboto Condensed,sans-serif;
+    color: #3d3d3d;
+    font-weight: 700;
+    letter-spacing: .02em;
+    line-height: inherit;
+    font-size:18px;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+#proDesc:before{
+    content: "\25AA"; /* Unicode character for a black small square */
+    margin-right: 5px;
+    
+}
+#proDesc{
+    font-family: Roboto,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #5d5d5d;
+    line-height: 1.75rem;
+    font-size:13.5px;
+}
+#proBorder{
+    margin-top:20px;
+    margin-bottom:10px;
+    border: 1px solid #c7c7c7;
+    border-radius: 5px;
+    border-style: dashed;
+    padding-left: 2%;
+    padding-right: 0%;
+    padding-bottom:50px;
+}
+#proBigDesc{
+    position:absolute;
+    top:960px;
+    left:150px;
+    right:150px;
+}
+#proAllDesc{
+   background-color:white;
+   padding-bottom:15px;
+   box-shadow: 0 1px 5px rgba(0,0,0,.2);
+    border-radius: 5px;
+    padding-top:10px;
+    border: 1px solid #c7c7c7; /* Border style */
+    border-radius: 5px; /* Border radius */
+    padding: 10px;
+}
+#proButDesc{
+    color: #3d3d3d;
+    opacity: 1;
+    margin-left:450px;
+    border-color:1px solid #c7c7c7;
+    background-color: #fff;
+    border: 1px solid #c7c7c7; /* Set the border for all sides */
+    border-bottom: none;
+    border-top-left-radius: 5px; /* Rounded top-left corner */
+    border-top-right-radius: 5px;
+    padding:10px 10px 10px 10px;
+    font-size: 1.125rem;
+    line-height: normal;
+    text-align: center;
+    font-family: Roboto Condensed,sans-serif;
+    font-weight: 700;
+    letter-spacing: .02em;
+}
+#proButShip {
+    color: #3d3d3d;
+    opacity: 1;
+    margin-left:0px;
+    border-top-color: #c7c7c7;
+    border-right-color: #c7c7c7;
+    border-left-color: #c7c7c7;
+    border-bottom: none; /* No border at the bottom */
+    background-color: #fff;
+    border: 1px solid #c7c7c7; /* Set the border for all sides */
+    border-bottom: none;
+    border-top-left-radius: 5px; /* Rounded top-left corner */
+    border-top-right-radius: 5px;
+    padding:10px 10px 10px 10px;
+    font-size: 1.125rem;
+    line-height: normal;
+    text-align: center;
+    font-family: Roboto Condensed,sans-serif;
+    font-weight: 700;
+    letter-spacing: .02em;
+}
+
+#proQuant{
+    width: 35px;
+    height: 100%;
+    min-width: 0;
+    padding: 0px 0px 4px 0px;
+    font-size: 16px;
+    background: #f7f7f7;
+    font-size: 20px;
+}
+.proButLeft{
+    border-radius: 0;
+    border: none;
+    border: 1px solid black;
+    font-weight: 600;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.proButRight{
+    border-radius: 0;
+    border: none;
+    border:1px solid black;
+    font-weight:600;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+}
+#proNuber{
+    border:1px solid black;
+    padding:3px 35px 3px 35px;
+    border-right:none;
+    border-left:none;
+}
+#pro1FaceBu{
+    width: 100%;
+    min-width: 0;
+    color: #fff;
+    background-color: #d12222;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    font-size: .875rem;
+    text-transform: uppercase;
+    border-width: 0;
+    line-height: 1.25rem;
+    cursor: pointer;
+    transition: all .3s;
+    margin-left:20px;
+    padding:8px 95px 8px 95px;
+    border-radius:5px;
+    font-weight:400;
+}
+#pro2FaceBu{
+    width: 100%;
+    min-width: 0;
+    color: #fff;
+    background-color: #d12222;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    font-size: .875rem;
+    text-transform: uppercase;
+    border-width: 0;
+    line-height: 1.25rem;
+    cursor: pointer;
+    transition: all .3s;
+    margin-left:20px;
+    padding:8px 95px 8px 95px;
+    border-radius:5px;
+    font-weight:400;
+}

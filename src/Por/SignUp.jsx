@@ -32,7 +32,7 @@ export const SignUp = () => {
       </div>
       <div className="form-container sign-in">
         <form>
-          <h1>Sing In</h1>
+          <h1>SIGN IN</h1>
           <div className="social-icons">
             <a href="#" className='iconn1'><i class="fa-brands fa-google"></i></a>
             <a href="#" className='iconn1'><i class="fa-brands fa-facebook-f"></i></a>
@@ -54,7 +54,7 @@ export const SignUp = () => {
             <button className='hidden2' id='register'  onClick={handleRegisterClick}>Sign In</button>
           </div>
           <div className="toggle-panel toggle-right">
-            <h1>Hellow, Friend!</h1>
+            <h1>Hello, Friend!</h1>
             <p>Register with your pesonal details to use all of site features</p>
             <button className='register' id='login' onClick={handleLoginClick}>Sign Up</button>
           </div>

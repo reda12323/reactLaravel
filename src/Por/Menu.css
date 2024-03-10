@@ -102,8 +102,8 @@
     color:red;
   }
   #Two{
-    
-    
+    font-weight:500; 
+    letter-spacing:1px;
   }
   .subcategory-list  li {
     text-align:center;
@@ -116,13 +116,14 @@
     top: 0;
     left: 272px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border:1px solid grey;
     padding-right:100px;
   }
   #Mustbe{
-    width:50px;
-    
+    width: 135%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  #Mustbe:hover{
+    color:red;
   }
   .category-dropdown li:hover .subcategory-list {
     display: block;

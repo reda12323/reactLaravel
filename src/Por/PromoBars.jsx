@@ -1,10 +1,26 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import PromoBar from "./PromoBar";
-import { data_product_promo, responsive } from "./PromoBar";
+import React, { useEffect, useState } from 'react';
+import { responsive } from "./PromoBar";
 import './PromoBar.css'
 export default function App() {
-  const product = data_product_promo.map((item) => (
+  const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = () => {
+        fetch('http://localhost/phpscript/here.php')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Received data:', data);
+                setData(data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    };
+  const product = data.map((item) => (
     <PromoBar style={{marginTop:"80px"}}
       name={item.name}
       url={item.url}

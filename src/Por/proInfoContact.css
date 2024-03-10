@@ -1,19 +1,20 @@
-.infob{
+.proinfob{
     background-color:#161616;
     padding-bottom:100px;
+    position:absolute;
+    top:1500px;
 }
-#infoTitre{
+#proinfoTitre{
     color:white;
     font-weight:bold;
     margin-bottom:30px;
-    
 }
-#infoTitre1{
+#proinfoTitre1{
     color:white;
     font-weight:bold;
     font-size:18.5px;
 }
-#infoImg{
+#proinfoImg{
     vertical-align: middle;
     display: inline-block;
     width:180px;
@@ -23,41 +24,41 @@
     border-radius: 0;
     box-shadow: none;
 }
-#infoBar1{
+#proinfoBar1{
     display:flex;
 }
-#infoDesc1{
+#proinfoDesc1{
     margin-top:45px;
     color:grey;
     font-size:14px;
     width:370px;
     
 }
-#infoAvan{
+#proinfoAvan{
     color:grey;
     font-size:13.5px;
     font-weight:500;
     width:191px;
 }
-#infoAvan:hover{
+#proinfoAvan:hover{
     color:red;
     font-size:13.5px;
     font-weight:500;
     width:191px;
 }
-#infoCol1{
+#proinfoCol1{
     padding-left:50px;
 }
-.infoCol1{
+.proinfoCol1{
     padding-left:50px;
 }
-#infoAll{
+#proinfoAll{
     padding-top:150px;
     margin-right:60px;
     margin-left:20px;
     text-align:justify;
 }
-#infoDesc2{
+#proinfoDesc2{
     margin-top:90px;
     margin-left:35px;
     color:white;
@@ -66,22 +67,22 @@
     font-weight:500;
     width:910px;
 }
-#infoIcon5{
+#proinfoIcon5{
     display:flex;
     margin-top:10px;
 }
-.fa-facebook{
+.profa-facebook{
     color:#2252d1;
 }
-.fa-instagram{
+.profa-instagram{
     color:#ffffff;
 }
-.fa-whatsapp{
+.profa-whatsapp{
     color:#08C70C;
 }
-.fa-tiktok{
+.profa-tiktok{
     color:#fff;
 }
-.fa-youtube{
+.profa-youtube{
     color:red;
 }
