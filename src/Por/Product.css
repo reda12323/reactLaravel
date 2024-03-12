@@ -1,6 +1,3 @@
-body{
-    
-}
 #proGround{
     display:flex;
     background: #fff;
@@ -104,9 +101,10 @@ body{
 }
 #proBigDesc{
     position:absolute;
-    top:960px;
-    left:150px;
+    top:600px;
+    left:0px;
     right:150px;
+    width:100%;
 }
 #proAllDesc{
    background-color:white;

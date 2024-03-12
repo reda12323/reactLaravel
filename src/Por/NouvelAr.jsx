@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Arrivage.css';
 export default function NouvelAr(props) {
+        
     return (
         <Link to={`/product/${props.info.id}`}>
             <div className="carda" id='carda'>

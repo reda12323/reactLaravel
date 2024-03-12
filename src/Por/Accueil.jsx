@@ -3,7 +3,7 @@ import SearchResultsListe from './SearchResultsListe';
 import { Link } from "react-router-dom";
 import Menu from './Menu';
 import PromoBars from "./PromoBars";
-import Imgpanier from '../Img/panier.png';
+import Panier from "./Panier";
 import ImagesSliders from './ImagesSliders';
 import Nav from './InfoNav';
 import './Style.css';
@@ -70,13 +70,7 @@ export default function Accueil(props) {
                             <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
                         </button>
-                        <div>
-                            <div id="Panier">Panier</div>
-                            <div id="vide">(vide)</div>
-                        </div>
-                            <img src={Imgpanier} id="ImgP" alt=""/>
-                            <div className="nav-cart-count">0</div>
-                        
+                        <Panier/>
                     </form>
                     <SearchResultsListe className="my-2" id="SearchRL" results={props.results} />
                 </div>

@@ -5,10 +5,6 @@ import React, { useEffect, useState } from 'react';
 export default function NouvelArs() {
     const [data, setData] = useState([]);
 
-    useEffect(() => {
-        fetchData();
-    }, []);
-
     const fetchData = () => {
         fetch('http://localhost/phpscript/here.php')
             .then(response => response.json())
@@ -18,6 +14,9 @@ export default function NouvelArs() {
             })
             .catch(error => console.error('Error fetching data:', error));
     };
+    useEffect(() => {
+        fetchData();
+    }, []);
     return(
         <div className='Collections'>
             <div className="container mx-auto p-4 pt-20" >

@@ -1,3 +1,19 @@
+/*import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import TraitPanier from './Por/TraitPanier';
+import { Provider } from 'react-redux';
+import { legacy_createStore } from 'redux';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+const store = legacy_createStore(TraitPanier);
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);*/
+
+
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
