@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import NouvelAr from "./NouvelAr";
+import './Arrivages.css';
+import React from "react";
+import Logos from "./BrandLogos";
+import InfoB from "./InfoBou";
 import SearchResultsListe from './SearchResultsListe';
-import { Link } from "react-router-dom";
-import Menu from './Menu';
-import PromoBars from "./PromoBars";
 import Panier from "./Panier";
-import ImagesSliders from './ImagesSliders';
-import Nav from './InfoNav';
-import './Style.css';
-import './StylePanier.css';
-import NouvelArs from "./NouvelArs";
-export default function Accueil(props) {
+import { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
+import "./Style5.css";
+export default function Promotion(props) {
     const [search,setSearch] = useState("");
     
     const fetchData = (value) => {
@@ -24,7 +23,21 @@ export default function Accueil(props) {
         setSearch(value);
         fetchData(value);
     }
-    return (
+    const [data, setData] = useState([]);
+
+    const fetchSata = () => {
+        fetch('http://localhost/phpscript/here2.php')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Received data:', data);
+                setData(data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    };
+    useEffect(() => {
+        fetchSata();
+    }, []);
+    return(
         <div className="min-h-screen ">
             <nav className="bg-gray-200 shadow-lg ">
                 <div className="container mx-auto">
@@ -65,52 +78,53 @@ export default function Accueil(props) {
                 <img className="w-48 h-50 mx-44 mb-24 ml-24" src="https://africagaming.ma/wp-content/uploads/2023/10/africa_gaming11.png" alt="" loading="eager" style={{ marginTop: '20px' }} />
                 <div className="flex flex-col" id="input-wrapper">
                     <form className="flex items-center" id="Two">
-                        <input id="SearshInput" type="text" className="m-auto" value={search} placeholder="Type to search ..." onChange={(e) => HandleChange(e.currentTarget.value)} style={{ color:'black', marginTop: '33px' }} />
+                    <input id="SearshInput" type="text" className="m-auto" value={search} placeholder="Type to search ..." onChange={(e) => HandleChange(e.currentTarget.value)} style={{ color:'black', marginTop: '33px' }} />
                         <button id="button-search" className="flex items-cente mx-3" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" id="new-icon" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
                         </button>
                         <Panier/>
+                        
                     </form>
-                    <SearchResultsListe className="" id="SearchRL" results={props.results} />
+                    <SearchResultsListe className="my-2" id="SearchRLp" results={props.results} />
+                </div>
+            </nav>
+            <nav className="flex items-start ml-20">
+                <div id="Fbarp" className="flex ">
+                    <div className="Accp">
+                        <div >
+                            <svg id="I2p" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=" w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                            </svg>
+                        </div>
+                        <div  id="P3p"><Link to="/">Accuiel</Link></div>
+                    </div>
+                    <div id="P1PR"><Link to="/boutique">Boutique</Link></div>
+                    <div className="P2PR"><Link to="/promotion">Promotion</Link></div>
+                    <div id="P1PR"><Link to="/props">À Propos</Link></div>
+                    <div id="P1PR"><Link to="/contacte">Contacte</Link></div>
                 </div>
                 
-            </nav>
-            <nav className="flex items-start ">
-                <Menu />
-                <div id="Fbar" className="flex ">
-                    <div className="Acc">
-                        <div>
-                        <svg id="I2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-                        </svg>
-                        </div>
-                        <div  className="P2"><Link to="/">Accuiel</Link></div>
-                    </div>
-                    <div id="P1"><Link to="/boutique">Boutique</Link></div>
-                    <div id="P1"><Link to="promotion">Promotion</Link></div>
-                    <div id="P1"><Link to="/props">À Propos</Link></div>
-                    <div id="P1"><Link to="/contacte">Contacte</Link></div>
-                </div>
-            </nav><hr/>
+            </nav><hr className="mt-6"/>
+            
             <nav>
-                <div>
-                    <ImagesSliders/>
-                </div>
+            <div className='Collections'>
+            <div className="container mx-auto p-4 pt-20" >
+                <h1 id="Arriv">PROMOTION</h1>
+            </div>
+            <div className="Collections-item">
+                {data.map((ele) => (
+                    <div  className="Collections-product" key={ele.id}><NouvelAr info={ele} /></div>
+                ))}
+            </div>
+        </div>
             </nav>
             <nav>
-                <div>
-                    <Nav/>
-                </div>
-            </nav>
-            <nav>
-                <PromoBars />
-            </nav>
-            <nav>
-                <NouvelArs/>
+                <Logos/>
+                <InfoB/>
             </nav>
         </div>
-        
-    );
+
+    )
 }

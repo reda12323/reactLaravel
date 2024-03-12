@@ -3,7 +3,7 @@ import Product from "./Product";
 import SearchResultsListe from './SearchResultsListe';
 import Imgpanier from '../Img/panier.png';
 import React, { useState } from "react";
-
+import Panier from "./Panier";
 export default function Products(props) {
     const [search, setSearch] = useState("");
     const { id } = useParams(); // Get the product ID from URL params
@@ -61,18 +61,13 @@ export default function Products(props) {
                 <img className="w-48 h-50 mx-44 mb-24 ml-24" src="https://africagaming.ma/wp-content/uploads/2023/10/africa_gaming11.png" alt="" loading="eager" style={{ marginTop: '20px' }} />
                 <div className="flex flex-col" id="input-wrapper">
                     <form className="flex items-center" id="Two">
-                        <input type="text" className="m-auto" value={search} placeholder="Type to search ..." onChange={(e) => HandleChange(e.currentTarget.value)} style={{ color:'black', marginTop: '20px' }} />
+                        <input type="text" id="SearshInput" className="m-auto" value={search} placeholder="Type to search ..." onChange={(e) => HandleChange(e.currentTarget.value)} style={{ color:'black', marginTop: '33px' }} />
                         <button id="button-search" className="flex items-cente mx-3" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" id="new-icon" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
                         </button>
-                        <div>
-                            <div id="Panier">Panier</div>
-                            <div id="vide">(vide)</div>
-                        </div>
-                            <img src={Imgpanier} id="ImgP" alt=""/>
-                            <div className="nav-cart-count">0</div>
+                        <Panier/>
                         
                     </form>
                     <SearchResultsListe className="my-2" id="SearchRL" results={props.results} />

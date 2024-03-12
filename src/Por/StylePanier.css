@@ -1,45 +1,23 @@
-#P1c{
-    padding-left:40px;
-    font-weight:600;
-    color:#555;
-}
-#P1c:hover{
-    color:rgb(220 38 38);
-}
-#P2c{
-    color:rgb(220 38 38);
-    font-weight:600;
-    padding-left:40px;
-}
-/*#FFFUCK {
-    font-size:1.2rem;
-    border:1px solid #e5e5e5; 
-    padding:7.5px 200px 6.5px 30px;
-    margin-bottom:13px;
-}
-#FFFUCK:focus{
-    outline:none;
-}
-#ImgPC{
+#ImgP{
     width: 45px;
     position: absolute;
     right: 210px;
     top: 183px;
 }
-#PanierC{
+#Panier{
     top:175px;
     position:absolute;
     font-size:20px;
     font-weight:bold;
     right:270px;
 }
-#videC{
+#vide{
     position:absolute;
     top:205px;
     color: grey;
     right:270px;
 }
-#id0C{
+#id0{
     position:absolute;
     top:185px;
     right:205px;
@@ -50,4 +28,4 @@
     line-height: 1;
     padding: 0.16rem 0.29rem;
     z-index: 1;
-}*/
+}

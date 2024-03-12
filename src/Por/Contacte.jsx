@@ -1,9 +1,9 @@
 import React from "react";
 import SearchResultsListe from './SearchResultsListe';
-import Imgpanier from '../Img/panier.png';
 import { Link } from "react-router-dom";
 import MidContacte from "./MidContacte";
 import { useState } from "react";
+import Panier from "./Panier";
 import Info from "./InfoContact";
 import './Style3.css';
 export default function Contacte(props){
@@ -62,18 +62,13 @@ export default function Contacte(props){
                 <img className="w-48 h-50 mx-44 mb-24 ml-24" src="https://africagaming.ma/wp-content/uploads/2023/10/africa_gaming11.png" alt="" loading="eager" style={{ marginTop: '20px' }} />
                 <div className="flex flex-col" id="input-wrapper">
                     <form className="flex items-center" id="Two">
-                        <input type="text" className="m-auto" value={search} placeholder="Type to search ..." onChange={(e) => HandleChange(e.currentTarget.value)} style={{ color:'black', marginTop: '20px' }} />
+                    <input id="SearshInput" type="text" className="m-auto" value={search} placeholder="Type to search ..." onChange={(e) => HandleChange(e.currentTarget.value)} style={{ color:'black', marginTop: '33px' }} />
                         <button id="button-search" className="flex items-cente mx-3" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" id="new-icon" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
                         </button>
-                        <div>
-                            <div id="Panier">Panier</div>
-                            <div id="vide">(vide)</div>
-                        </div>
-                            <img src={Imgpanier} id="ImgP" alt=""/>
-                            <div className="nav-cart-count">0</div>
+                        <Panier/>
                         
                     </form>
                     <SearchResultsListe className="my-2" id="SearchRLp" results={props.results} />
@@ -90,7 +85,7 @@ export default function Contacte(props){
                         </div>
                         <div  id="P3p"><Link to="/">Accuiel</Link></div>
                     </div>
-                    <div id="P1c"><Link>Boutique</Link></div>
+                    <div id="P1c"><Link to="/boutique">Boutique</Link></div>
                     <div id="P1c"><Link>Promotion</Link></div>
                     <div id="P1c"><Link to="/props">À Propos</Link></div>
                     <div id="P2c"><Link to="/contacte">Contacte</Link></div>

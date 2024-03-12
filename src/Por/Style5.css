@@ -1,0 +1,13 @@
+#P1PR{
+    padding-left:40px;
+    font-weight:600;
+    color:#555;
+}
+#P1PR:hover{
+    color:rgb(220 38 38);
+}
+.P2PR{
+    color:rgb(220 38 38);
+    font-weight:600;
+    padding-left:40px;
+}

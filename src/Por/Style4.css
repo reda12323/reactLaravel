@@ -1,0 +1,13 @@
+#P1B{
+    padding-left:40px;
+    font-weight:600;
+    color:#555;
+}
+#P1B:hover{
+    color:rgb(220 38 38);
+}
+.P2B{
+    color:rgb(220 38 38);
+    font-weight:600;
+    padding-left:40px;
+}
