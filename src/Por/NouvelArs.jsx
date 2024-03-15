@@ -6,7 +6,7 @@ export default function NouvelArs() {
     const [data, setData] = useState([]);
 
     const fetchData = () => {
-        fetch('http://localhost/phpscript/here.php')
+        fetch('http://localhost/phpscript/here2.php')
             .then(response => response.json())
             .then(data => {
                 console.log('Received data:', data);
@@ -24,7 +24,7 @@ export default function NouvelArs() {
             </div>
             <div className="Collections-item">
                 {data.map((ele) => (
-                    <div  className="Collections-product" key={ele.id}><NouvelAr info={ele} /></div>
+                    <div  className="Collections-product" key={ele.id}><NouvelAr info={ele} product2={true} condipromo ={false}/></div>
                 ))}
             </div>
         </div>

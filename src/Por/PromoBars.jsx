@@ -22,6 +22,7 @@ export default function App() {
     };
   const product = data.map((item) => (
     <PromoBar style={{marginTop:"80px"}}
+      id={item.id}
       name={item.name}
       url={item.url}
       new_price={item.new_price} // Assuming 'price' is the correct property for the new price

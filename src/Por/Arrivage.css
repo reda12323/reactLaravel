@@ -51,4 +51,7 @@
   .btnp:hover .iconp {
     transform: translateX(-50%) translateY(0); /* Move icon into view on hover */
   }
+  .image{
+    margin-left:32px;
+  }
   

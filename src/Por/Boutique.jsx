@@ -110,12 +110,12 @@ export default function Boutique(props) {
             
             <nav>
             <div className='Collections'>
-            <div className="container mx-auto p-4 pt-20" >
+            <div className="container mx-auto p-4 pt-4" >
                 <h1 id="Arriv">BOUTIQUE</h1>
             </div>
             <div className="Collections-item">
                 {data.map((ele) => (
-                    <div  className="Collections-product" key={ele.id}><NouvelAr info={ele} /></div>
+                    <div  className="Collections-product" key={ele.id}><NouvelAr info={ele} product2={true} condipromo ={false} /></div>
                 ))}
             </div>
         </div>

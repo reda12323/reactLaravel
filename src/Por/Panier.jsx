@@ -1,7 +1,24 @@
+import React, { useReducer } from 'react';
 import Imgpanier from '../Img/panier.png';
-import React from 'react';
 import './StylePanier.css';
+
+const initialState = { nbr: 0 };
+
+function reducer(state, action) {
+    switch (action.type) {
+        case "INCREMENT": 
+            return { ...state, nbr: state.nbr + 1 };
+        case "DECREMENT": 
+            // Ensure nbr doesn't go below 0
+            return { ...state, nbr: Math.max(0, state.nbr - 1) };
+        default:
+            return state;
+    }
+}
+
 export default function Panier() {
+    const [state] = useReducer(reducer, initialState);
+
     return (
         <div>
             <div>
@@ -9,21 +26,7 @@ export default function Panier() {
                 <div id="vide">(vide)</div>
             </div>
             <img src={Imgpanier} id="ImgP" alt="" />
-            <div id="id0">0</div>
+            <div id="id0">{state.nbr}</div>
         </div>
     );
-}
-
-export const initialState = { nbr: 0 };
-
-export function TraitPanier(state = initialState, action) {
-    switch (action.type) {
-        case "Ajouter": 
-            return { ...state, nbr: state.nbr + 1 };
-        case "Supprimer": 
-            // Assuming you want to reset the count to 0 when removingz
-            return { ...state, nbr: state.nbr - 1  };
-        default:
-            return state;
-    }
 }

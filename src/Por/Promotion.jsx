@@ -26,7 +26,7 @@ export default function Promotion(props) {
     const [data, setData] = useState([]);
 
     const fetchSata = () => {
-        fetch('http://localhost/phpscript/here2.php')
+        fetch('http://localhost/phpscript/here.php')
             .then(response => response.json())
             .then(data => {
                 console.log('Received data:', data);
@@ -110,12 +110,12 @@ export default function Promotion(props) {
             
             <nav>
             <div className='Collections'>
-            <div className="container mx-auto p-4 pt-20" >
+            <div className="container mx-auto p-4 pt-4" >
                 <h1 id="Arriv">PROMOTION</h1>
             </div>
             <div className="Collections-item">
                 {data.map((ele) => (
-                    <div  className="Collections-product" key={ele.id}><NouvelAr info={ele} /></div>
+                    <div  className="Collections-product" key={ele.id}><NouvelAr info={ele} condipromo ={true} /></div>
                 ))}
             </div>
         </div>

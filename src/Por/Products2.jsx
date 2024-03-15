@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import Product from "./Product";
+import Product2 from "./Product2";
 import SearchResultsListe from './SearchResultsListe';
 import React, { useState } from "react";
 import Panier from "./Panier";
@@ -91,7 +91,7 @@ export default function Products(props) {
                 
             </nav><hr className="mt-6"/>
             <nav>
-                <Product productID={id} /> {/* Pass the productID to the Product component */}
+                <Product2 productID2={id} /> {/* Pass the productID to the Product component */}
                 
             </nav>
         </div>
