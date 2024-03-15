@@ -49,7 +49,7 @@ export default function Propos(props){
                                 <div className="text-red-800">Email : </div>
                                 <div className="text-gray-400"> redalextayzi@gmail.com </div>
                             </li>
-                            <Link to="/account"><li className=" justify-end pl-96 "> {/* No need for ml-auto here */}
+                            <Link to="/account"><li className=" flex items-center pl-[230px]"> {/* No need for ml-auto here */}
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 ml-7 text-red-800">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                 </svg>
@@ -60,7 +60,7 @@ export default function Propos(props){
                 </div>
             </nav>
             <nav className="flex items-start">
-                <img className="w-48 h-50 mx-44 mb-24 ml-24" src="https://africagaming.ma/wp-content/uploads/2023/10/africa_gaming11.png" alt="" loading="eager" style={{ marginTop: '20px' }} />
+                <Link to="/"><img className="w-48 h-50 mx-44 mb-24 ml-24" src="https://africagaming.ma/wp-content/uploads/2023/10/africa_gaming11.png" alt="" loading="eager" style={{ marginTop: '20px' }} /></Link>
                 <div className="flex flex-col" id="input-wrapper">
                     <form className="flex items-center" id="Two">
                     <input id="SearshInput" type="text" className="m-auto" value={search} placeholder="Type to search ..." onChange={(e) => HandleChange(e.currentTarget.value)} style={{ color:'black', marginTop: '33px' }} />

@@ -9,13 +9,13 @@ export default function MidContacte(){
                     <div id="ContDesc">Africa Gaming MAROC est une entreprise spécialisée dans la vente de PC & de matériel informatique & électronique au Maroc.</div>
                     <p id="ContP2">SIÈGE SOCIAL</p>
                     <ul>
-                        <li id="ContDesc">65, Avenue Moulay Ali Cherif (Bab Bouhaja)</li>
-                        <li id="ContDesc">Salé – Maroc</li>
+                        <li id="ContDesc">65, Massira 1 ( Al Ahbas )</li>
+                        <li id="ContDesc">Marrakech – Maroc</li>
                     </ul>
 
                     <p id="ContP2">ÉCRIVEZ-NOUS :</p>
                     <ul>
-                        <li id="ContDesc">pcstorema@gmail.com</li>
+                        <li id="ContDesc">africagaming2022@gmail.com</li>
                     </ul>
 
                     <p id="ContP2">APPELEZ-NOUS</p>
@@ -31,8 +31,8 @@ export default function MidContacte(){
 
                     <p id="ContP2">RÉSEAUX SOCIAUX</p>
                     <ul>
-                        <li id="ContDesc">Facebook : <a href="https://www.facebook.com/pcstoremaroc/">https://www.facebook.com/pcstoremaroc/</a></li>
-                        <li id="ContDesc">Instagram : <a href="https://www.instagram.com/pcstore.ma/">https://www.instagram.com/pcstore.ma/</a></li>
+                        <li id="ContDesc">Facebook : <a href="https://www.facebook.com/people/Africa-Gaming/61551477496309/" target="_blank" rel="noreferrer">https://www.facebook.com/africagaming/</a></li>
+                        <li id="ContDesc">Instagram : <a href="https://www.instagram.com/africagming/?hl=fr" target="_blank" rel="noreferrer">https://www.instagram.com/africagaming/</a></li>
                     </ul>
 
                 </div>

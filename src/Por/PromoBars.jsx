@@ -32,7 +32,7 @@ export default function App() {
   ));
 
   return (
-    <div className="container mx-auto p-4 pt-20" id="promoborder">
+    <div className="container mx-auto  pt-20" id="promoborder">
       <p id="MegaP">MEGA PROMO</p>
       <div>
       <Carousel autoPlay={true} autoPlaySpeed={1500} infinite={true}  responsive={responsive} >

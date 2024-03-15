@@ -9,7 +9,7 @@ const ImagesSliders = () => {
     ];
     
     const containerStyles = {
-      width: "1065px",
+      width: "935px",
       height: "430px",
       margin: "0 auto",
       marginTop: "15px",
