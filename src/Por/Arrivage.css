@@ -22,10 +22,10 @@
     padding: 5px 15px;
     font-size: 12px;
     border-radius: 5px;
-    width: 100%;
+    width: 90%;
     position: relative; /* To position the text and icon */
     overflow: hidden; /* Hide overflowing icon */
- 
+    margin-right:23px;
   }
   
   .textp {
