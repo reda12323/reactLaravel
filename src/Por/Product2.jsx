@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Info2 from "./proInfoContact";
 import './Product2.css';
+import { Link } from "react-router-dom";
 
 export default function Product2(props) {
     const [data, setData] = useState([]);
@@ -140,9 +141,9 @@ export default function Product2(props) {
                                         </div>
                                         <div className="flex">
                                             {selectedQuantity <= product.quantite ? (
-                                                <button>
+                                                <Link to={`/monpanier2/${product.id}`}><button>
                                                     <span id="pro1FaceBu"><i className="fa-solid fa-cart-shopping"></i> Ajouter au panier</span>
-                                                </button>
+                                                </button></Link>
                                             ) : (
                                                 <button disabled>
                                                     <span id="pro2FaceBu">Quantité indisponible</span>

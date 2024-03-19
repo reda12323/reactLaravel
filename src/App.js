@@ -9,6 +9,7 @@ import Products from './Por/Products';
 import Products2 from './Por/Products2';
 import Boutique from './Por/Boutique';
 import Promotion from './Por/Promotion';
+import MonPanier from './Por/MonPanier';
 function App() {
   const [results,setResults] = useState([]);
 
@@ -25,6 +26,8 @@ function App() {
             <Route path="/product2/:id" element={<Products2  setResults={setResults} results={results} />}/>
             <Route path='/boutique' element={<Boutique setResults={setResults} results={results} />}/>
             <Route path='/promotion' element={<Promotion setResults={setResults} results={results} />}/>
+            <Route path="/monpanier2/:id2" element={<MonPanier  setResults={setResults} results={results} />}/>
+            <Route path="/monpanier1/:id1" element={<MonPanier  setResults={setResults} results={results} />}/>
           </Routes>
         
         

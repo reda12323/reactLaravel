@@ -1,0 +1,57 @@
+#cadrePanier{
+    margin-left:10px;
+    margin-right:7px;
+    text-align:center;
+    width:250px;    
+}
+#cadrePanier:hover{
+    transform:scale(1.05);
+    transition: 0.6s;
+    border:1px solid #817d7d;
+    border-radius:5px;
+    width:250px;
+
+ }
+#cadrePanierImg{
+    max-width: 200px;
+    margin-left:30px
+}
+#cadrePanierPai{
+    color:white;
+    text-align:center;
+    background-color:green;
+    border-radius:5px;
+    border: 3px solid green;
+    font-weight:600;
+    margin-right:5px;
+    padding-right:15px;
+    padding-left:15px;
+}
+#cadrePanierPai:hover{
+    color:green;
+    background-color:white;
+    border-radius:5px;
+    border: 1px solid green;
+    font-weight:600;
+}
+#cadrePanierSupp{
+    color:white;
+    text-align:center;
+    background-color:#d12222;
+    border-radius:5px;
+    border: 3px solid #d12222;
+    font-weight:600;
+    margin-left:5px;
+    padding-right:15px;
+    padding-left:15px;
+}
+#cadrePanierSupp:hover{
+    color:#d12222;
+    background-color:white;
+    border-radius:5px;
+    border: 1px solid #d12222;
+    font-weight:600;
+}
+#cadrePanierPaiTwo{
+    padding-bottom:8px;
+}

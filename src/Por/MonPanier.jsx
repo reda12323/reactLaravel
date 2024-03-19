@@ -1,13 +1,13 @@
+import { useParams } from "react-router-dom";
+import { useState } from "react";
 import React from "react";
+import { Link } from "react-router-dom";
 import SearchResultsListe from './SearchResultsListe';
 import Panier from "./Panier";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import About from "./About";
-import Logos from "./BrandLogos";
-import './Style2.css';
-import Info from "./InfoContact";
-export default function Propos(props){
+import AfficherPanier from "./AfficherPanier";
+export default function MonPanier(props){
+    const { id2 } = useParams();
+    const { id1 } = useParams();
     const [search,setSearch] = useState("");
     
     const fetchData = (value) => {
@@ -22,7 +22,7 @@ export default function Propos(props){
         setSearch(value);
         fetchData(value);
     }
-    return(
+    return (
         <div className="min-h-screen ">
             <nav className="bg-gray-200 shadow-lg ">
                 <div className="container mx-auto">
@@ -74,6 +74,7 @@ export default function Propos(props){
                     </form>
                     <SearchResultsListe className="my-2" id="SearchRLp" results={props.results} />
                 </div>
+                
             </nav>
             <nav className="flex items-start ml-20">
                 <div id="Fbarp" className="flex ">
@@ -87,17 +88,13 @@ export default function Propos(props){
                     </div>
                     <div id="P1p"><Link to="/boutique">Boutique</Link></div>
                     <div id="P1p"><Link to="/promotion">Promotion</Link></div>
-                    <div className="P2p"><Link to="/props">À Propos</Link></div>
+                    <div id="P1p"><Link to="/props">À Propos</Link></div>
                     <div id="P1p"><Link to="/contacte">Contacte</Link></div>
                 </div>
-                
-            </nav><hr className="mt-6"/>
-            <nav>
-                <About/>
             </nav>
+            <hr className="mt-6"/>
             <nav>
-                <Logos/>
-                <Info/>
+                <AfficherPanier id2={id2} id1={id1}/>
             </nav>
         </div>
     )
