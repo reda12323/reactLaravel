@@ -9,7 +9,7 @@ export default function Product2(props) {
     const  id2  = props.productID2;
     
     const fetchData = () => {
-        fetch('http://localhost/phpscript/here2.php')
+        fetch('http://localhost/phpscript/here.php')
             .then(response => response.json())
             .then(data => {
                 console.log('Received data:', data);
@@ -102,7 +102,42 @@ export default function Product2(props) {
         e.preventDefault();
         setHere(false);
     }
+    const handleAddToCart = () => {
+        const product = data.find(product => parseInt(product.id) === parseInt(id2));
+       
+        if (product) {
+            const productData = {
+                id: product.id,
+                picture: product.url,
+                name: product.name,
+                priceN: product.new_price,
+                priceO: product.old_price,
+                 // Add quantity field
+            };
+    
+            fetch('http://localhost/phpscript/panier.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(productData), // Pass productData directly
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Product added to cart successfully (from fetch)');
+                // Handle success (e.g., display confirmation message)
+            } else {
+                console.error('Failed to add product to cart:', response.statusText);
+                // Handle error (e.g., display error message)
+            }
+        })
+        .catch(error => {
+            console.error('Error adding product to cart:', error);
+            // Handle network errors (e.g., display error message or retry)
+        });
 
+    };
+}
     return (
         <div>
             {data.map((product) => {
@@ -141,7 +176,7 @@ export default function Product2(props) {
                                         </div>
                                         <div className="flex">
                                             {selectedQuantity <= product.quantite ? (
-                                                <Link to={`/monpanier2/${product.id}`}><button>
+                                                <Link to={`/monpanier2/${product.id}`}><button onClick={handleAddToCart}>
                                                     <span id="pro1FaceBu"><i className="fa-solid fa-cart-shopping"></i> Ajouter au panier</span>
                                                 </button></Link>
                                             ) : (

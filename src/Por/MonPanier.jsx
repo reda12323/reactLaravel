@@ -7,7 +7,7 @@ import Panier from "./Panier";
 import AfficherPanier from "./AfficherPanier";
 export default function MonPanier(props){
     const { id2 } = useParams();
-    const { id1 } = useParams();
+    
     const [search,setSearch] = useState("");
     
     const fetchData = (value) => {
@@ -94,7 +94,7 @@ export default function MonPanier(props){
             </nav>
             <hr className="mt-6"/>
             <nav>
-                <AfficherPanier id2={id2} id1={id1}/>
+                <AfficherPanier id2={id2} />
             </nav>
         </div>
     )

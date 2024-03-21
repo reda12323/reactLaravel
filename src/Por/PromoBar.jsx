@@ -25,7 +25,7 @@ export const responsive = {
 
 export default function PromoBar({ id,url, name, new_price, old_price, disponibility }) {
   return (
-    <Link to={`/product/${id}`}>
+    <Link to={`/product2/${id}`}>
       <div className="card mr-0 w-3/4 p-2" id='card'>
         <mark className='text-white   rounded-tl-lg rounded-tr-lg  rounded-bl-xl  pr-2 pl-2 pt-2 p-2'>Promo !</mark>
         <div className='text-center'>

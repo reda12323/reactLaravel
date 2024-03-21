@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+/*import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Info2 from "./proInfoContact";
 import './Product.css';
@@ -25,7 +25,7 @@ export default function Product(props) {
     const [here, setHere] = useState(true);
 
     const DescButton = styled.button`
-        /* Add your button styles here */
+         Add your button styles here 
             color: ${({ active }) => active ? '#3d3d3d' : '#c7c7c7'};
             opacity: 1;
             margin-left: ${({ active }) => active ? '450px' : '450px'};
@@ -192,4 +192,4 @@ export default function Product(props) {
             </div>
         </div>
     );
-}
+}*/

@@ -6,6 +6,8 @@ import PromoBars from "./PromoBars";
 import Panier from "./Panier";
 import ImagesSliders from './ImagesSliders';
 import Nav from './InfoNav';
+import Logos from "./BrandLogos";
+import Info from "./InfoContact";
 import './Style.css';
 import './StylePanier.css';
 import NouvelArs from "./NouvelArs";
@@ -109,6 +111,10 @@ export default function Accueil(props) {
             </nav>
             <nav>
                 <NouvelArs/>
+            </nav>
+            <nav>
+                <Logos/>
+                <Info/>
             </nav>
         </div>
         

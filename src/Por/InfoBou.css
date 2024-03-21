@@ -12,6 +12,7 @@
     color:white;
     font-weight:bold;
     font-size:18.5px;
+    margin-left:14px;
 }
 #infoImgB{
     vertical-align: middle;
@@ -54,7 +55,7 @@
 #infoAllB{
     padding-top:150px;
     margin-right:60px;
-    margin-left:20px;
+    margin-left:5px;
     text-align:justify;
 }
 #infoDesc2B{
@@ -69,6 +70,7 @@
 #infoIcon5B{
     display:flex;
     margin-top:10px;
+    margin-left:14px;
 }
 .fa-facebook{
     color:#2252d1;

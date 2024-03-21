@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react';
 import Imgpanier from '../Img/panier.png';
 import './StylePanier.css';
+import { Link } from 'react-router-dom';
 
 const initialState = { nbr: 0 };
 
@@ -21,12 +22,12 @@ export default function Panier() {
 
     return (
         <div>
-            <div>
+        <div>
                 <div id="Panier">Panier</div>
                 <div id="vide">(vide)</div>
             </div>
-            <img src={Imgpanier} id="ImgP" alt="" />
-            <div id="id0">{state.nbr}</div>
+            <Link to="/monpanier"><img src={Imgpanier} id="ImgP" alt="" />
+            <div id="id0">{state.nbr}</div></Link>
         </div>
     );
 }
