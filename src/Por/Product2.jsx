@@ -3,10 +3,16 @@ import styled from "styled-components";
 import Info2 from "./proInfoContact";
 import './Product2.css';
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function Product2(props) {
     const [data, setData] = useState([]);
     const  id2  = props.productID2;
+    const [id,setId] = useState("");
+    const [url,setUrl] = useState("");
+    const [name,setName] = useState("");
+    const [new_price,setNew_price] = useState("");
+    const [old_price,setOld_price] = useState("");
     
     const fetchData = () => {
         fetch('http://localhost/phpscript/here.php')
@@ -103,50 +109,32 @@ export default function Product2(props) {
         setHere(false);
     }
     const handleAddToCart = () => {
-        const product = data.find(product => parseInt(product.id) === parseInt(id2));
-       
-        if (product) {
-            const productData = {
-                id: product.id,
-                picture: product.url,
-                name: product.name,
-                priceN: product.new_price,
-                priceO: product.old_price,
-                 // Add quantity field
-            };
+        const selectedProduct = data.find(product => parseInt(product.id) === parseInt(id2));
     
-            fetch('http://localhost/phpscript/panier.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(productData), // Pass productData directly
-        })
-        .then(response => {
-            if (response.ok) {
-                console.log('Product added to cart successfully (from fetch)');
-                // Handle success (e.g., display confirmation message)
-            } else {
-                console.error('Failed to add product to cart:', response.statusText);
-                // Handle error (e.g., display error message)
-            }
-        })
-        .catch(error => {
-            console.error('Error adding product to cart:', error);
-            // Handle network errors (e.g., display error message or retry)
-        });
-
+        if (selectedProduct) {
+            const formData = new FormData();
+            formData.append('product_id', selectedProduct.id);
+            formData.append('picture', selectedProduct.url);
+            formData.append('name', selectedProduct.name);
+            formData.append('priceN', selectedProduct.new_price);
+            formData.append('priceO', selectedProduct.old_price);
+    
+            const url = "http://localhost/phpscript/panier.php";
+            axios.post(url, formData)
+                .then(response => alert(response.data))
+                .catch(error => alert(error));
+        }
     };
-}
+    
     return (
         <div>
             {data.map((product) => {
                 if (parseInt(product.id) === parseInt(id2)) {
                     return (
-                        <div key={product.id} id="proGround">
-                            <div><img src={product.url} alt="" width="350px" /></div>
+                        <div key={product.id} id="proGround" value={product.id} onChange={(e)=>setId(e.target.value)}>
+                            <div><img src={product.url} value={product.url} onChange={(e)=>setUrl(e.target.value)} alt="" width="350px" /></div>
                             <div>
-                                <p id="protitre">{product.name}</p>
+                                <p id="protitre" value={product.name} onChange={(e)=>setName(e.target.value)}>{product.name}</p>
                                 <p id="proReference">Référence : {product.reference}</p>
                                 <p id="proEtat">Etat : {product.etat}</p>
                                 <p>
@@ -165,8 +153,8 @@ export default function Product2(props) {
                                     <li id="proDesc">{product.description3}</li>
                                 </ul>
                                 <div id="proBorder2">
-                                    <span style={{ color: "#fd6282", fontSize: "28px", fontWeight: 700, lineHeight: "normal" }}>{product.new_price}</span>
-                                    <span style={{ marginLeft: "30px", fontSize: "14px", fontStyle: "italic", color: "#5d5d5d", textDecoration: "line-through" }}>{product.old_price}</span><br />
+                                    <span style={{ color: "#fd6282", fontSize: "28px", fontWeight: 700, lineHeight: "normal" }} value={product.new_price} onChange={(e)=>setNew_price(e.target.value)}>{product.new_price}</span>
+                                    <span style={{ marginLeft: "30px", fontSize: "14px", fontStyle: "italic", color: "#5d5d5d", textDecoration: "line-through" }} value={product.old_price} onChange={(e)=>setOld_price(e.target.value)}>{product.old_price}</span><br />
                                     <span style={{ color: "#5d5d5d", fontStyle: "italic", fontSize: "11.5px" }}>TTC - ENTRE 1 à 4 Jours</span>
                                     <div className="flex mt-4">
                                         <div className="flex">

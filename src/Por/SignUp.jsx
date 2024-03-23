@@ -1,21 +1,74 @@
 import React from 'react'
 import{ useState } from 'react';
-import './SignUp.css'
+import './SignUp.css';
+import axios from 'axios';
+import { useEffect } from 'react';
 export const SignUp = () => {
   const [isActive, setIsActive] = useState(false);
-
+  const [name , setName] = useState('');
+  const [email , setEmail] = useState('');
+  const [password , setPassword] = useState('');
+  const [data, setData] = useState([]);
+  const [email1 , setEmail1] = useState('');
+  const [password1 , setPassword1] = useState('');
   const handleRegisterClick = () => {
     setIsActive(false);
   };
+  const handleSubmitUp = (e) => {
+    e.preventDefault();
+    if(name.length === 0 ){
+      alert("Name has left empty");
+    }
+    else if(email.length === 0 ){
+      alert("Email has left empty");
+    }
+    else if(password.length === 0 ){
+      alert("Password has left empty");
+    }
+    else{
+      const url = "http://localhost/phpscript/Account.php";
+      
+      let fData = new FormData();
+      fData.append('name',name);
+      fData.append('email',email);
+      fData.append('password',password);
+      axios.post(url, fData)
+      .then(response=> alert(response.data))
+      .catch(error=> alert(error));
+    }
+  }
+  const fetchData = () => {
+      fetch('http://localhost/phpscript/AccountAff.php')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Received data:', data);
+                setData(data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
 
   const handleLoginClick = () => {
     setIsActive(true);
+  };
+  const handleSubmitIn = (e) => {
+    e.preventDefault();
+    const foundAccount = data.find(account => account.email === email1 && account.password === password1);
+    console.log(data);
+    if (foundAccount) {
+      alert("Welcome");
+    } else {
+      alert("Email or password is incorrect");
+    }
   };
   return (
     <div className='container3' >
       <div className={`container2 ${isActive ? 'active' : ''}`} id='container'>
       <div className="form-container sign-up">
-        <form>
+        <form  onSubmit={handleSubmitUp}>
           <h1>Create Account</h1>
           <div className="social-icons">
             <a href="#" className='icon'><i class="fa-brands fa-google"></i></a>
@@ -24,14 +77,14 @@ export const SignUp = () => {
             <a href="#" className='icon'><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
           <span>or use your email for registeration</span>
-          <input type="text" placeholder='Name' />
-          <input type="email" placeholder='Email' />
-          <input type="password" placeholder='Password' />
-          <button>Sign Up</button>
+          <input type="text" id='name' name='name' value={name} placeholder='Name' onChange={(e) => setName(e.target.value)} />
+          <input type="email" id='email' name='email' value={email} placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
+          <input type="password" id='password' name='password' value={password} placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
+          <button onClick={handleSubmitUp}>Sign Up</button>
         </form>
       </div>
       <div className="form-container sign-in">
-        <form>
+        <form onSubmit={handleSubmitIn}>
           <h1>SIGN IN</h1>
           <div className="social-icons">
             <a href="#" className='iconn1'><i class="fa-brands fa-google"></i></a>
@@ -40,10 +93,10 @@ export const SignUp = () => {
             <a href="#" className='iconn1'><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
           <span>or use your email password</span>
-          <input type="email" placeholder='Email' />
-          <input type="password" placeholder='Password' />
+          <input type="email" id='email1' name='email1' value={email1} placeholder='Email' onChange={(e) => setEmail1(e.target.value)} />
+          <input type="password" id='password1' name='password1' value={password1} placeholder='Password' onChange={(e) => setPassword1(e.target.value)} />
           <a href="#">Forget Your Password?</a>
-          <button>Sign In</button>
+          <button onClick={handleSubmitIn}>Sign In</button>
         </form>
       </div>
       <div className="toggle-container">
