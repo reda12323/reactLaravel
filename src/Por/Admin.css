@@ -1,0 +1,54 @@
+#Adminformule input {
+  border: 3px solid black; 
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  outline: none;
+  border-radius: 5px;
+  width:250px;
+  height:40px;
+}
+#Adminformule div {
+  text-align:center;
+}
+#Adminformule{
+  
+}
+#Adminformule label {
+margin-right:10px;
+}
+#Adminformule label{
+  text-align : justify;
+}
+#Adminformule textarea {
+  border: 1px solid #ccc; /* Add border */
+  padding: 2px 5px;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  outline: none;
+  border-radius: 10px;
+  border: 3px solid black;
+  width:250px;
+  height:66px;
+}
+#Adminformule #button{
+  position:absolute;
+  bottom:-223px;
+  width:250px;
+  height:40px;
+  background-color:#B20808;
+  border:1px solid #B20808;
+  font-style:italic;
+  font-weight:bold;
+  letter-spacing:1.5px;
+  border-radius: 5px;
+}
+#Adminformule #button:hover{
+  border:3px solid black;
+  color : #B20808;
+  background-color:#e6e6e6;
+}
+

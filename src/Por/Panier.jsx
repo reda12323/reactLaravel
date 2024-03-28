@@ -1,33 +1,35 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import Imgpanier from '../Img/panier.png';
 import './StylePanier.css';
 import { Link } from 'react-router-dom';
-
-const initialState = { nbr: 0 };
-
-function reducer(state, action) {
-    switch (action.type) {
-        case "INCREMENT": 
-            return { ...state, nbr: state.nbr + 1 };
-        case "DECREMENT": 
-            // Ensure nbr doesn't go below 0
-            return { ...state, nbr: Math.max(0, state.nbr - 1) };
-        default:
-            return state;
-    }
-}
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Panier() {
-    const [state] = useReducer(reducer, initialState);
+    const [panier, setPanier] = useState([]);
+    const fetchData = () => {
+        fetch('http://localhost/phpscript/panierAf.php')
+              .then(response => response.json())
+              .then(data => {
+                  console.log('Received data:', data);
+                  setPanier(data);
+              })
+              .catch(error => console.error('Error fetching data:', error));
+      };
+      useEffect(() => {
+          fetchData();
+      }, [panier]);
 
     return (
         <div>
-        <div>
+            <div>
                 <div id="Panier">Panier</div>
-                <div id="vide">(vide)</div>
+                {panier.length > 0 ? null : <div id="vide">(vide)</div>}
             </div>
-            <Link to="/monpanier"><img src={Imgpanier} id="ImgP" alt="" />
-            <div id="id0">{state.nbr}</div></Link>
+            <Link to="/monpanier">
+                <img src={Imgpanier} id="ImgP" alt="" />
+                <div id="id0">{panier.length > 0 ? panier.length : 0}</div>
+            </Link>
         </div>
     );
 }

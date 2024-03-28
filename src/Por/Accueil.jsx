@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchResultsListe from './SearchResultsListe';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Menu from './Menu';
 import PromoBars from "./PromoBars";
 import Panier from "./Panier";
@@ -12,9 +12,8 @@ import './Style.css';
 import './StylePanier.css';
 import NouvelArs from "./NouvelArs";
 export default function Accueil(props) {
-    const [search,setSearch] = useState("");
-    
-    const fetchData = (value) => {
+    const [search,setSearch] = useState("");    
+        const fetchData = (value) => {
         fetch("https://jsonplaceholder.typicode.com/users").then((res) => res.json()).then(json => {
             const results = json.filter((user) => {
                 return value && user && user.name && user.name.toLowerCase().includes(value)
@@ -88,7 +87,7 @@ export default function Accueil(props) {
                             <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                         </svg>
                         </div>
-                        <div  className="P2"><Link to="/">Accuiel</Link></div>
+                        <div  className="P2"><Link to="/acc">Accuiel</Link></div>
                     </div>
                     <div id="P1"><Link to="/boutique">Boutique</Link></div>
                     <div id="P1"><Link to="promotion">Promotion</Link></div>

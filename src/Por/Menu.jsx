@@ -117,15 +117,16 @@ return (
               onMouseEnter={() => handleCategoryHover(category.id)}
               onMouseLeave={handleCategoryLeave}
             >
-              <Link to={category.route} onClick={() => setIsMenuOpen(false)}><span id='firstLi'>
-                {category.name}</span>
+              <Link to={category.route} onClick={() => setIsMenuOpen(false)}>
+                <Link to="/promotion"><span id='firstLi'>
+                {category.name}</span></Link>
               </Link>
               
               {hoveredCategory === category.id && category.subcategories && (
                 <ul className="subcategory-list">
                   {category.subcategories.map((subcategory) => (
                     <li id='Mustbe' key={subcategory.id}>
-                      <Link to={subcategory.route}><span id='Two'>{subcategory.name}</span></Link>
+                      <Link to={subcategory.route}><Link to="/boutique"><span id='Two'>{subcategory.name}</span></Link></Link>
                     </li>
                   ))}
                 </ul>

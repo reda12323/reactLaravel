@@ -71,7 +71,6 @@ export default function Products(props) {
                     </form>
                     <SearchResultsListe className="my-2" id="SearchRL" results={props.results} />
                 </div>
-                
             </nav>
             <nav className="flex items-start ml-20">
                 <div id="Fbarp" className="flex ">

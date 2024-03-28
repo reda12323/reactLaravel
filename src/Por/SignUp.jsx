@@ -2,15 +2,17 @@ import React from 'react'
 import{ useState } from 'react';
 import './SignUp.css';
 import axios from 'axios';
+import {  useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 export const SignUp = () => {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState();
   const [name , setName] = useState('');
   const [email , setEmail] = useState('');
   const [password , setPassword] = useState('');
   const [data, setData] = useState([]);
   const [email1 , setEmail1] = useState('');
   const [password1 , setPassword1] = useState('');
+  const navigate = useNavigate()
   const handleRegisterClick = () => {
     setIsActive(false);
   };
@@ -56,12 +58,21 @@ export const SignUp = () => {
   };
   const handleSubmitIn = (e) => {
     e.preventDefault();
-    const foundAccount = data.find(account => account.email === email1 && account.password === password1);
-    console.log(data);
-    if (foundAccount) {
-      alert("Welcome");
-    } else {
-      alert("Email or password is incorrect");
+    const foundUser = data.find((account) => account.email === email1);
+    if(foundUser){
+        if(foundUser.password === password1){
+          navigate('/')
+        }
+        else if(foundUser.password !== password1 && password1 !== "admin"){
+          alert("password false");
+        }
+    }else if(foundUser !== email1 && email1 !== "admin"){
+      alert("email false");
+    }
+    if(email1=== "admin"){
+      if(password1 === "admin"){
+        navigate("/props");
+      }
     }
   };
   return (
@@ -96,8 +107,10 @@ export const SignUp = () => {
           <input type="email" id='email1' name='email1' value={email1} placeholder='Email' onChange={(e) => setEmail1(e.target.value)} />
           <input type="password" id='password1' name='password1' value={password1} placeholder='Password' onChange={(e) => setPassword1(e.target.value)} />
           <a href="#">Forget Your Password?</a>
-          <button onClick={handleSubmitIn}>Sign In</button>
-        </form>
+          <button onClick={handleSubmitIn}>
+            Sign In
+          </button>
+      </form>
       </div>
       <div className="toggle-container">
         <div className="toggle">
