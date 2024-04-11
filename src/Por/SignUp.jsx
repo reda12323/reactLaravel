@@ -71,7 +71,7 @@ export const SignUp = () => {
     }
     if(email1=== "admin"){
       if(password1 === "admin"){
-        navigate("/props");
+        navigate("/admin");
       }
     }
   };

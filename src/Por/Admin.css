@@ -1,4 +1,7 @@
-#Adminformule input {
+#AdminTable{
+  
+}
+/*#Adminformule input {
   border: 3px solid black; 
   font-family: inherit;
   font-size: inherit;
@@ -12,9 +15,7 @@
 #Adminformule div {
   text-align:center;
 }
-#Adminformule{
-  
-}
+
 #Adminformule label {
 margin-right:10px;
 }
@@ -22,7 +23,7 @@ margin-right:10px;
   text-align : justify;
 }
 #Adminformule textarea {
-  border: 1px solid #ccc; /* Add border */
+  border: 1px solid #ccc; 
   padding: 2px 5px;
   font-family: inherit;
   font-size: inherit;
@@ -36,7 +37,7 @@ margin-right:10px;
 }
 #Adminformule #button{
   position:absolute;
-  bottom:-223px;
+  bottom:-265px;
   width:250px;
   height:40px;
   background-color:#B20808;
@@ -51,4 +52,85 @@ margin-right:10px;
   color : #B20808;
   background-color:#e6e6e6;
 }
+#AdminformuleSupp textarea {
+  border: 1px solid #ccc; 
+  padding: 2px 5px;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  outline: none;
+  border-radius: 10px;
+  border: 3px solid black;
+  width:250px;
+  height:66px;
+}
+#AdminformuleSupp input {
+  border: 3px solid black; 
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  outline: none;
+  border-radius: 5px;
+  width:250px;
+  height:40px;
+}
+#AdminformuleSupp #button{
+  width:250px;
+  height:40px;
+  background-color:#B20808;
+  border:1px solid #B20808;
+  font-style:italic;
+  font-weight:bold;
+  letter-spacing:1.5px;
+  border-radius: 5px;
+}
+#AdminformuleSupp #button:hover{
+  border:3px solid black;
+  color : #B20808;
+  background-color:#e6e6e6;
+}
 
+#AdminformuleModify textarea {
+  border: 1px solid #ccc; 
+  padding: 2px 5px;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  outline: none;
+  border-radius: 10px;
+  border: 3px solid black;
+  width:250px;
+  height:66px;
+}
+#AdminformuleModify input {
+  border: 3px solid black; 
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  outline: none;
+  border-radius: 5px;
+  width:250px;
+  height:40px;
+}
+#AdminformuleModify #button{
+  width:250px;
+  height:40px;
+  background-color:#B20808;
+  border:1px solid #B20808;
+  font-style:italic;
+  font-weight:bold;
+  letter-spacing:1.5px;
+  border-radius: 5px;
+  position:absolute;
+  bottom:-1092px;
+}
+#AdminformuleModify #button:hover{
+  border:3px solid black;
+  color : #B20808;
+  background-color:#e6e6e6;
+}
+*/

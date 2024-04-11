@@ -1,31 +1,27 @@
 import SearchResultsListe from './SearchResultsListe';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Panier from "./Panier";
 import axios from 'axios';
 import './Admin.css'
 import { Link } from 'react-router-dom';
 export default function PageAdmin(props){
+    const [data, setData] = useState([]);
     const [search, setSearch] = useState("");
-    const [image, setImage] = useState('');
-    const [name, setName] = useState('');
-    const [new_price, setNewPrice] = useState('');
-    const [old_price, setOldPrice] = useState('');
-    const [disponibility, setDisponibility] = useState('');
-    const [garantie, setGarantie] = useState('');
-    const [etat, setEtat] = useState('');
-    const [reference, setReference] = useState('');
-    const [designation, setDesignation] = useState('');
-    const [model, setModel] = useState('');
-    const [description1, setDescription1] = useState('');
-    const [description2, setDescription2] = useState('');
-    const [description3, setDescription3] = useState('');
-    const [h1Desc1, setH1Desc1] = useState('');
-    const [h1Desc2, setH1Desc2] = useState('');
-    const [h1, setH1] = useState('');
-    const [h2, setH2] = useState('');
-    const [define, setDefine] = useState('');
-    const [quantite, setQuantite] = useState('');
-    const fetchData = (value) => {
+    const [id , setId] = useState("");
+    const fetchData = () => {
+        fetch('http://localhost/phpscript/here.php')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Received data:', data);
+                setData(data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    };
+    useEffect(() => {
+        fetchData();
+    }, [data]);
+
+    const fetchSata = (value) => {
         fetch("https://jsonplaceholder.typicode.com/users").then((res) => res.json()).then(json => {
             const results = json.filter((user) => {
                 return value && user && user.name && user.name.toLowerCase().includes(value)
@@ -35,40 +31,25 @@ export default function PageAdmin(props){
     };
     const HandleChange = (value) => {
         setSearch(value);
-        fetchData(value);
+        fetchSata(value);
     }
-    const HandleAdmin = (e) => {
+    const HandleAdminSupp = (e) => {
         e.preventDefault();
-        const lien = "http://localhost/phpscript/AddProduct.php";
-        let pData = new FormData();
-        pData.append('image', image);
-        pData.append('name', name);
-        pData.append('new_price', new_price);
-        pData.append('old_price', old_price);
-        pData.append('disponibility', disponibility);
-        pData.append('garantie', garantie);
-        pData.append('etat', etat);
-        pData.append('reference', reference);
-        pData.append('designation', designation);
-        pData.append('model', model);
-        pData.append('description1', description1);
-        pData.append('description2', description2);
-        pData.append('description3', description3);
-        pData.append('h1Desc1', h1Desc1);
-        pData.append('h1Desc2', h1Desc2);
-        pData.append('h1', h1);
-        pData.append('h2', h2);
-        pData.append('define', define);
-        pData.append('quantite', quantite);
-        
-        axios.post(lien, pData)
-        .then(response=> alert(response.data))
+        const lien = "http://localhost/phpscript/SuppAdmin.php";
+        let sData = new FormData();
+        sData.append('id',id);
+        axios.post(lien, sData)
+        .then(response=> {
+            alert(response.data)
+            setId("");
+        })
         .catch(error => alert(error));
     }
+    
     return(
-        <div>
-            <nav className="bg-gray-200 shadow-lg ">
-                <div className="container mx-auto">
+        <div className=' h-screen'>
+                 <nav className="bg-gray-200 shadow-lg ">
+                    <div className="container mx-auto">
                     <div className="flex justify-between items-center py-2.5">
                         <ul className="flex flex-wrap space-x-6  items-center justify-start"> {/* Add justify-end class here */}
                             <li className="flex items-center">
@@ -92,7 +73,7 @@ export default function PageAdmin(props){
                                 <div className="text-red-800">Email : </div>
                                 <div className="text-gray-400"> redalextayzi@gmail.com </div>
                             </li>
-                            <Link to="/account"><li className=" flex items-center pl-[230px]"> {/* No need for ml-auto here */}
+                            <Link to="/account"><li className=" absolute right-5 top-0"> {/* No need for ml-auto here */}
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 ml-7 text-red-800">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                 </svg>
@@ -118,95 +99,51 @@ export default function PageAdmin(props){
                     <SearchResultsListe className="my-2" id="SearchRL" results={props.results} />
                 </div>
             </nav>
-            <nav>
-                <div >
-                    <form id='Adminformule' onSubmit={e => e.preventDefault()}  className='flex space-x-8 justify-center items-center' >
-                        <div id='TwoAdmin'  style={{float:"right"}}>
-                            <div>
-                                <label style={{textAlign:"justify"}}>Image</label><br /> 
-                                <input type="text" name="url" id="url" value={image} onChange={(e) => setImage(e.target.value)} />
+            <nav >
+                <div className='p-5 overflow-auto rounded-lg shadow hidden md:block'>
+                    <table className='w-full' border="1" id='AdminTable'>
+                        <thead className='bg-gray-50 border-b-2 border-grey-200'>
+                            <tr>
+                                <th className='w-20 p-3 text-sm font-semibold tracking-wide text-left'>Id</th>
+                                <th className='p-3 text-sm font-semibold tracking-wide text-left'>Name</th>
+                                <th className='w-32 p-3 text-sm font-semibold tracking-wide text-left'>Prix</th>
+                                <th className='w-24 p-3 text-sm font-semibold tracking-wide text-left'>Quantié</th>
+                            </tr>
+                        </thead>
+                        <tbody className='divide-y divide-gray-100'>
+                            {data.map((show,index) => {
+                                return(
+                                    <tr className='bg-gray-50' key={index}>
+                                        <td className='font-bold text-blue-500 hover:underline'>{show.id}</td>
+                                        <td className='p-3 text-sm text-gray-700 whitespace-nowrap'>{show.name}</td>
+                                        <td className='p-3 text-sm text-gray-700 whitespace-nowrap'>{show.new_price}</td>
+                                        <td className='p-3 text-sm text-gray-700 whitespace-nowrap'>{show.quantite}</td>
+                                        <td className='p-3 text-sm text-gray-700 whitespace-nowrap'><span className='p-1.5 text-xs font-medium uppercase tracking-wider text-blue-800 bg-blue-200 rounded-lg bg-opacity-50'>Modifier</span></td>
+                                        <td className='p-3 text-sm text-gray-700 whitespace-nowrap'><span className='p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50'>Ajouter</span></td>
+                                        <td className='p-3 text-sm text-gray-700 whitespace-nowrap'><span className='p-1.5 text-xs font-medium uppercase tracking-wider text-gray-800 bg-gray-200 rounded-lg bg-opacity-50' onClick={(e) => { setId(show.id); HandleAdminSupp(e); }}>Supprimer</span></td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </table>
+                </div>
+                <div className="p-5 grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+                    
+                    {data.map((show, index) => {
+                        return (
+                            <div className='bg-white space-y-3 p-4 rounded-lg shadow' key={index}>
+                                <div className='flex items-center space-x-2 text-sm overflow-hidden'>
+                                    <div className='font-bold text-blue-500 hover:underline'>{show.id}</div>
+                                    <div className='text-sm text-gray-700 whitespace-nowrap overflow-hidden'>{show.name}</div>
+                                    <div className='text-sm font-medium text-black'>{show.new_price}</div>
+                                    <div className='text-sm font-medium text-black'>{show.quantite}</div>
+                                    <div><span className='p-1.5 text-xs font-medium uppercase tracking-wider text-blue-800 bg-blue-200 rounded-lg bg-opacity-50'>Modifier</span></div>
+                                    <div><span className='p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50'>Ajouter</span></div>
+                                    <div><span className='p-1.5 text-xs font-medium uppercase tracking-wider text-gray-800 bg-gray-200 rounded-lg bg-opacity-50'>Supprimer</span></div>
+                                </div>
                             </div>
-                            <div>
-                                Name :<br />  
-                                <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} />
-                            </div>
-                            <div>
-                                New_price :<br />  
-                                <input type="text" name="new_price" id="new_price" value={new_price} onChange={(e) => setNewPrice(e.target.value)}/>
-                            </div>
-                            <div>
-                                Old_price :<br />  
-                                <input type="text" name="old_price" id="old_price" value={old_price} onChange={(e) => setOldPrice(e.target.value)} />
-                            </div>
-                            <div>
-                                Disponibility :<br />  
-                                <input type="text" name="disponibility" id="disponibility" value={disponibility} onChange={(e) => setDisponibility(e.target.value)} />
-                            </div>
-                            <div>
-                                Garantie :<br />  
-                                <input type="text" name="garantie" id="garantie" value={garantie} onChange={(e) => setGarantie(e.target.value)}/>
-                            </div>
-                            <div>
-                                Etat :<br /> 
-                                <input type="text" name="etat" id="etat" value={etat} onChange={(e) => setEtat(e.target.value)}/>
-                            </div>
-                            <div>
-                                Reference :<br />  
-                                <input type="text" name="reference" id="reference" value={reference} onChange={(e) => setReference(e.target.value)}/>
-                            </div>
-                            <div>
-                                Designation :<br />  
-                                <input type="text" name="designation" id="designation" value={designation} onChange={(e) => setDesignation(e.target.value)}/>
-                            </div>
-                            <div>
-                                Model :<br />  
-                                <input type="text" name="model" id="model" value={model} onChange={(e) => setModel(e.target.value)}/>
-                            </div>
-                        </div>
-                        <div id='TwoAdmin'>
-                            <div>
-                                Description1 :<br />  
-                                <input type="text" name="description1" id="description1" value={description1} onChange={(e) => setDescription1(e.target.value)}/>
-                            </div>
-                            <div>
-                                Description2 :<br /> 
-                                <input type="text" name="description2" id="description2" value={description2} onChange={(e) => setDescription2(e.target.value)}/>
-                            </div>
-                            <div>
-                                Description3 :<br />  
-                                <input type="text" name="description3" id="description3" value={description3} onChange={(e) => setDescription3(e.target.value)}/>
-                            </div>
-                            <div>
-                                h1Desc1 :<br />  
-                                <textarea  name="h1Desc1" id="h1Desc1" value={h1Desc1} onChange={(e) => setH1Desc1(e.target.value)}/>
-                            </div>
-                            <div>
-                                h1Desc2 :<br />  
-                                <textarea  name="h1Desc2" id="h1Desc2" value={h1Desc2} onChange={(e) => setH1Desc2(e.target.value)}/>
-                            </div>
-                            <div>
-                                Quantité :<br />  
-                                <input type="text" name="quantite" id="quantite" value={quantite} onChange={(e) => setQuantite(e.target.value)}/>
-                            </div>
-                            <div>
-                                h1 :<br />  
-                                <input type="text" name="h1" id="h1" value={h1} onChange={(e) => setH1(e.target.value)}/>
-                            </div>
-                            <div>
-                                h2 :<br />  
-                                <input type="text" name="h2" id="h2" value={h2} onChange={(e) => setH2(e.target.value)}/>
-                            </div>
-                            <div>
-                                Define :<br />  
-                                <input type="text" placeholder='pc ou clavier ou souris ....' name="define" id="define" value={define} onChange={(e) => setDefine(e.target.value)}/>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <input type="button" name="" id="button" onClick={HandleAdmin} value="Send"/>
-                            </div>
-                        </div>
-                    </form>
+                        )
+                    })}
                 </div>
             </nav>
         </div>

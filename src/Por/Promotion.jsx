@@ -11,8 +11,8 @@ import "./Style5.css";
 export default function Promotion(props) {
     const [search,setSearch] = useState("");
     
-    const fetchData = (value) => {
-        fetch("https://jsonplaceholder.typicode.com/users").then((res) => res.json()).then(json => {
+        const fetchData = (value) => {
+        fetch("http://localhost/phpscript/here.php").then((res) => res.json()).then(json => {
             const results = json.filter((user) => {
                 return value && user && user.name && user.name.toLowerCase().includes(value)
             });
@@ -98,7 +98,7 @@ export default function Promotion(props) {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                             </svg>
                         </div>
-                        <div  id="P3p"><Link to="/">Accuiel</Link></div>
+                        <div  id="P3p"><Link to="/">Accueil</Link></div>
                     </div>
                     <div id="P1PR"><Link to="/boutique">Boutique</Link></div>
                     <div className="P2PR"><Link to="/promotion">Promotion</Link></div>
